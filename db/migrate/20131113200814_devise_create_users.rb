@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Fields I'm adding in
       t.string :first_name
       t.string :last_name
-      t.string :username
+      t.string :profile_name
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
