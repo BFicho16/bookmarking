@@ -1,3 +1,44 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// EVERYTHING BELOW IS MY CODE
+
+// 1. creating the class project with 1px line, 10px padding on top
+// and bottom between each project
+
+.project {
+	border-bottom: solid 1px #CCC;
+	padding: 10px 0px;
+}
+
+// 2. overriding the paragraph tag for the my projects page
+// with 4px top and botoom, 0px left and right
+
+.project p {
+	margin: 4px 0;
+}
+
+// 3. making the admin class links within the project
+// class invisiable
+
+.project .admin {
+	display: none;
+}
+
+// 4. any element with the class project and hover
+// will be targeted and anything with the class admin
+// should be displayed. - We still need to add hover class to
+// our status that we will add in using javascript.  once we do
+// the hover rule will override the admin rule above. 
+
+.project.hover .admin {
+	display: inline;
+}
+
+// 5. lets give the projects a hover state with a color 
+// so its clear to user when we're hoving over them
+
+.project.hover {
+	background: #FAFAFA
+}

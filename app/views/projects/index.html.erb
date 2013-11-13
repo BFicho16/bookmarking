@@ -1,29 +1,24 @@
-<h1>Listing projects</h1>
+<h1>My Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<%= link_to 'Create New Project', new_project_path, class: "tiny button radius secondary" %>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @projects.each do |project| %>
+<div class="project">
+  <strong><%= project.name %></strong>
+  <p><%= project.description %></p>
+    <div class="meta">
+      <%= link_to time_ago_in_words(project.created_at) + " ago", project %>
+      <span class="admin">
+      <%= link_to 'Edit', edit_project_path(project) %>
+      <%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure you want to delete?' } %>
+      </span>
+    </div>
+</div>
+
+
+<% end %>
+
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+
