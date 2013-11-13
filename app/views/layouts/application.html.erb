@@ -44,14 +44,17 @@
     </ul>
   </nav>
 
+  <!-- adding in code from the devise gem per devise docs -->
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   <!-- adding in foundation grid below -->
 
     <div class="row">
-      <div class="large-8 columns"><%= yield %></div>
+     <div class="large-8 columns"><%= yield %></div>
       </div>
     </div>
-
-    
 
     
     <%= javascript_include_tag "application" %>
