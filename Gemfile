@@ -9,6 +9,9 @@ gem 'zurb-foundation'
 # install the devis gem for login
 gem 'devise'
 
+# install railsadmin
+gem 'rails_admin'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

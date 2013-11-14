@@ -25,15 +25,21 @@
 
   <!-- adding in the foundation header below -->
 
+  <div class="contain-to-grid sticky">
+
   <nav class="top-bar">
   <ul class="title-area">
+    
     <!-- Title Area -->
     <li class="name">
       <h1><a href="projects">LOOPLIST</a></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  
   </ul>
+  
   <section class="top-bar-section">
+    
     <!-- Left Nav Section -->
     <ul class="left">
       <li class="divider"></li>
@@ -42,7 +48,33 @@
       <li class="active"><a href="#">About Us</a></li>
       <li class="divider"></li>
     </ul>
+    
+    <!-- Right Nav Section -->
+    <ul class="right">
+      
+      <!-- Signed In -->
+      <% if user_signed_in? %>
+          <!-- Link to Edit --> 
+          <li class="divider"></li>
+          <li><%= link_to current_user.email, "/users/edit" %></li>
+          <!-- Link to Signout (NOT WORKING) -->
+          <li class="divider"></li>
+          <li><%= link_to "Log Out", "/users/sign_out", method: :delete %></li>
+          <li class="divider"></li>
+      <!-- Guest User -->
+      <% else %>
+          <li class="divider"></li>
+          <li><%= link_to "Login", "/users/sign_in" %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Register", "/users/sign_up" %></li>
+          <li class="divider"></li>
+      <% end %>
+
+    </ul>
+  </section>
   </nav>
+
+  </div>
 
   <!-- adding in code from the devise gem per devise docs -->
     

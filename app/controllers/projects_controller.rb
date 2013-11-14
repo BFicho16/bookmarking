@@ -1,4 +1,9 @@
 class ProjectsController < ApplicationController
+  
+  # Adding in authentification in so users 
+  # can't create projects as guests
+  before_filter :authenticate_user!, :except => [:show, :index]
+  
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
